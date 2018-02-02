@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_retros"
+            android:title="Search Boards" />
+        <item
+            android:id="@+id/nav_sprinters"
+            android:title="DashBoard" />
+        <item
+            android:id="@+id/nav_backlogs"
+            android:title="User Profile" />
+        <item
+            android:id="@+id/nav_user_stories"
+            android:title="Settings" />
+        <item
+            android:id="@+id/nav_module"
+            android:title="Retro Boards" />
+
+        <item
+            android:id="@+id/nav_sprint"
+            android:title="Sprint Boards" />
+
+        <item
+            android:id="@+id/nav_scrum"
+            android:title="Scrum Boards" />
+
+        <item
+            android:id="@+id/nav_kanban"
+            android:title="Kanban Boards" />
+
+        <item
+            android:id="@+id/nav_epic"
+            android:title="Epic Boards" />
+
+        <item
+            android:id="@+id/backlogs"
+            android:title="BackLogs" />
+
+        <item
+            android:id="@+id/nav_projects"
+            android:title="Projects" />
+
+        <item
+            android:id="@+id/nav_program"
+            android:title="Programs" />
+
+        <item
+            android:id="@+id/nav_portfolio"
+            android:title="Portfolio" />
+
+        <item
+            android:id="@+id/nav_user_stories_k"
+            android:title="Logout" />
+
+    </group>
+</menu>
