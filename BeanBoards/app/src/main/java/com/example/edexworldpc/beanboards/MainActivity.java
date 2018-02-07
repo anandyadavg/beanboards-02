@@ -1,7 +1,10 @@
 package com.example.edexworldpc.beanboards;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
@@ -19,7 +22,9 @@ import android.widget.ImageView;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
-    ImageView home;
+    ImageView img_retrotimer, img_story_teller, img_sprint_runner, img_kanban_winner, img_product_owner;
+    ImageView img_score_keeper, img_notifications, img_time_tracker, img_team;
+    SharedPreferences navSession;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,10 +52,30 @@ public class MainActivity extends AppCompatActivity
 
             }
         });
+        // Establishing shared preference
+        navSession = getSharedPreferences("ÜserAction", Context.MODE_PRIVATE);
 
-        home = (ImageView)findViewById(R.id.Home);
+        // inflating view
+        img_retrotimer = (ImageView)findViewById(R.id.img_retro);
+        img_notifications = (ImageView)findViewById(R.id.img_notifications);
+        img_kanban_winner = (ImageView)findViewById(R.id.img_kanban_winner);
+        img_product_owner = (ImageView)findViewById(R.id.img_product_owner);
+        img_score_keeper = (ImageView)findViewById(R.id.img_score_keeper);
+        img_sprint_runner = (ImageView)findViewById(R.id.img_sprint_runner);
+        img_story_teller = (ImageView)findViewById(R.id.img_story_teller);
+        img_team = (ImageView)findViewById(R.id.img_team);
+        img_time_tracker = (ImageView)findViewById(R.id.img_time_tracker);
 
-        home.setOnClickListener(this);
+        // Setting on-click listener
+        img_retrotimer.setOnClickListener(this);
+        img_notifications.setOnClickListener(this);
+        img_kanban_winner.setOnClickListener(this);
+        img_product_owner.setOnClickListener(this);
+        img_score_keeper.setOnClickListener(this);
+        img_sprint_runner.setOnClickListener(this);
+        img_story_teller.setOnClickListener(this);
+        img_team.setOnClickListener(this);
+        img_time_tracker.setOnClickListener(this);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -60,8 +85,6 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-
     }
 
     @Override
@@ -102,16 +125,32 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_retros) {
+        if (id == R.id.nav_backlogs) {
             // Handle the camera action
-        } else if (id == R.id.nav_sprinters) {
+        } else if (id == R.id.nav_kanban) {
 
         } else if (id == R.id.nav_backlogs) {
 
-        } else if (id == R.id.nav_user_stories) {
+        } else if (id == R.id.nav_epic) {
 
-        } else if (id == R.id.nav_user_stories_k) {
+        } else if (id == R.id.nav_retro_boards) {
 
+        }
+        else if(id == R.id.nav_logout){
+            // Log out
+            SharedPreferences sharedPreferences = getSharedPreferences("LoginPreference", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.clear();
+            editor.apply();
+            editor.commit();
+
+            SharedPreferences userAction = getSharedPreferences("ÜserAction", Context.MODE_PRIVATE);
+            SharedPreferences.Editor edit_userAction = sharedPreferences.edit();
+            edit_userAction.clear();
+            edit_userAction.apply();
+            edit_userAction.commit();
+
+            startActivity(new Intent(this, LoginActivity.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -123,8 +162,59 @@ public class MainActivity extends AppCompatActivity
     public void onClick(View view) {
         switch (view.getId())
         {
-            case R.id.Home:
-                startActivity(new Intent(this, LoginActivity.class));
+            case R.id.img_retro:
+                SharedPreferences.Editor edit = navSession.edit();
+                edit.putString("userTheme","RetroBoard");
+                edit.commit();
+                startActivity(new Intent(this, CheckAuthentication.class));
+                break;
+            case R.id.img_notifications:
+                SharedPreferences.Editor edit_img_notification = navSession.edit();
+                edit_img_notification.putString("userTheme","notification");
+                edit_img_notification.commit();
+                startActivity(new Intent(this, CheckAuthentication.class));
+                break;
+            case R.id.img_kanban_winner:
+                SharedPreferences.Editor edit_kanban = navSession.edit();
+                edit_kanban.putString("userTheme","kanban");
+                edit_kanban.commit();
+                startActivity(new Intent(this, CheckAuthentication.class));
+                break;
+            case R.id.img_product_owner:
+                SharedPreferences.Editor edit_product = navSession.edit();
+                edit_product.putString("userTheme","product");
+                edit_product.commit();
+                startActivity(new Intent(this, CheckAuthentication.class));
+                break;
+            case R.id.img_score_keeper:
+                SharedPreferences.Editor edit_score = navSession.edit();
+                edit_score.putString("userTheme","scorekeeper");
+                edit_score.commit();
+                startActivity(new Intent(this, CheckAuthentication.class));
+                break;
+            case R.id.img_sprint_runner:
+                SharedPreferences.Editor edit_sprint = navSession.edit();
+                edit_sprint.putString("userTheme","sprintrunner");
+                edit_sprint.commit();
+                startActivity(new Intent(this, CheckAuthentication.class));
+                break;
+            case R.id.img_story_teller:
+                SharedPreferences.Editor edit_story = navSession.edit();
+                edit_story.putString("userTheme","storyteller");
+                edit_story.commit();
+                startActivity(new Intent(this, CheckAuthentication.class));
+                break;
+            case R.id.img_team:
+                SharedPreferences.Editor edit_team = navSession.edit();
+                edit_team.putString("userTheme","team");
+                edit_team.commit();
+                startActivity(new Intent(this, CheckAuthentication.class));
+                break;
+            case R.id.img_time_tracker:
+                SharedPreferences.Editor edit_time_tracker = navSession.edit();
+                edit_time_tracker.putString("userTheme","time_tracker");
+                edit_time_tracker.commit();
+                startActivity(new Intent(this, CheckAuthentication.class));
                 break;
         }
     }
