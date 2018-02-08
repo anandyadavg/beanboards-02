@@ -42,6 +42,7 @@ public class LandingPage extends AppCompatActivity
             }
         });
 
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -52,6 +53,7 @@ public class LandingPage extends AppCompatActivity
         SharedPreferences navSession = getSharedPreferences("ÜserAction", Context.MODE_PRIVATE);
         UserAction = navSession.getString("userTheme", null);
 
+        setTitle(UserAction);
         Toast.makeText(this, UserAction, Toast.LENGTH_SHORT).show();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
