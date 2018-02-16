@@ -34,7 +34,7 @@ public class WorkFlowFragments extends Fragment {
         wBview = (WebView) gview.findViewById(R.id.wBview);
         WebSettings webSettings = wBview.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        String url = "http://10.0.2.2:3000/WorkFlow";
+        String url = "https://bbm-staging-194118.appspot.com/WorkFlow";
 
         wBview.loadUrl(url);
         //wBview.postUrl(url);

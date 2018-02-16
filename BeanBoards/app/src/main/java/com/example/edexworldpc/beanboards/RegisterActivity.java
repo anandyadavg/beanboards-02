@@ -81,7 +81,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     postData.put("organization", edittext_organization.getText().toString());
                     postData.put("phone", edittext_phone.getText().toString());
                     PostResponseAsyncTask task = new PostResponseAsyncTask(RegisterActivity.this, postData);
-                    task.execute("http://10.0.2.2:3000/addUserService");
+                    task.execute("https://bbm-staging-194118.appspot.com/addUserService");
                 }
                 break;
         }

@@ -1,0 +1,134 @@
+landing page (Retro Timer)
+
+tab 1 (My Boards)
+
+table
+	columns 
+	Board name(link)
+	Private / Public
+	Watchers
+	Votes / Likes
+	Calendar
+	Delete Action
+
+tab 2 (Boards View)
+
+Add a board
+Delete a board
+color a board
+edit the title of the board 
+Add members - > popup - > name & role +
+Calendar 
+watch the board
+like the board
+Peek inside (Work flow)
+
+
+Registration
+
+Boards restricted to role:
+Contributor
+
+Approver
+
+Reviewer
+
+StakeHolder
+
+Champion
+
+CCB
+
+Champion
+Tester
+
+Data Analyst
+
+Project Sponsor
+Developer 
+Engineer
+
+Business Analyst
+
+Project Manager
+
+Change Manager
+
+Program Manager
+Portfolio Manager
+
+Financial Controller
+
+Scrum Master
+
+Product Owner
+Product Manager
+
+
+SME (Subject Manager Expert)
+
+
+Add a tile (Comment Box)
+ 
+tab 3 (View Workflow)
+
+Buttons
+Add a column
+Delete a column
+Color Column
+Edit Title
+Add a tile (Comment Box)
+
+Add a tile
+
+
+
+Module name on the green bar
+
+User clicks on the filter a popup will come up
+
+
+Today (Requirements)
+Tooltips for navbar
+
+Comment Box:
+Text Box over glyphicons 
+Calendar should show latest Date time stamp of the respective activity.
+ - Scheduled meeting
+
+Email:
+ - Email of that comment (popup the email compose window)
+
+Link:
+ - Text Boxes (inside popup Maximum 5)
+
+Tags:
+ - Text Boxes (inside popup maximum 5 less than 20 characters)
+
+Share:
+ - facebook, linkedin, twitter, whatsapp, text message, google drive, dropbox, 
+sharepoint
+
+User (task to be assigned):
+ - displaying the list of the user and assign role
+
+Button Groups
+Release/Build/Test->codeLink/patch/release/branch/trunk->input text box
+
+Specifically
+Timer
+
+
+Fixing comments in workflow
+Each comments must be separated by a seperator
+
+Navigation paths
+
+
+
+
+ 
+
+
+
+

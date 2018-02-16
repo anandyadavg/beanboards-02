@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     postData.put("email", edittext_email.getText().toString());
                     postData.put("password", edittext_password.getText().toString());
                     PostResponseAsyncTask task = new PostResponseAsyncTask(LoginActivity.this, postData);
-                    task.execute("http://10.0.2.2:3000/loginService");
+                    task.execute("https://bbm-staging-194118.appspot.com/loginService");
                 }
 
                 break;

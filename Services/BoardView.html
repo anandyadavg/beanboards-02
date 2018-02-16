@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="glyphicons/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $("#tags").click(function(){
+      $("#statusOptions").hide();
+      $("#phaseOptions").hide();
+      $("#priorityOptions").hide();
+      $("#severityOptions").hide();
+      $("#riskOptions").hide();
+      $("#testOptions").hide();
+      $("#buildOptions").hide();
+      $("#releaseOptions").hide();
+      $("#linksOptions").hide();
+      $("#tagsOptions").show();
+
+    });
+
+    $("#links").click(function(){
+      $("#statusOptions").hide();
+      $("#phaseOptions").hide();
+      $("#priorityOptions").hide();
+      $("#severityOptions").hide();
+      $("#riskOptions").hide();
+      $("#testOptions").hide();
+      $("#buildOptions").hide();
+      $("#releaseOptions").hide();
+      $("#tagsOptions").hide();
+      $("#linksOptions").show();
+
+    });
+
+    $("#status").click(function(){
+      $("#phaseOptions").hide();
+      $("#priorityOptions").hide();
+      $("#severityOptions").hide();
+      $("#riskOptions").hide();
+      $("#testOptions").hide();
+      $("#buildOptions").hide();
+      $("#releaseOptions").hide();
+      $("#tagsOptions").hide();
+      $("#linksOptions").hide();
+      $("#statusOptions").show();
+    });
+
+
+$("#phase").click(function(){
+  $("#statusOptions").hide();
+      $("#tagsOptions").hide();
+      $("#priorityOptions").hide();
+      $("#severityOptions").hide();
+      $("#riskOptions").hide();
+      $("#testOptions").hide();
+      $("#buildOptions").hide();
+      $("#releaseOptions").hide();
+      $("#linksOptions").hide();
+      $("#phaseOptions").show();
+    });
+
+$("#priority").click(function(){
+      $("#statusOptions").hide();
+      $("#tagsOptions").hide();
+      $("#phaseOptions").hide();
+      $("#severityOptions").hide();
+      $("#riskOptions").hide();
+      $("#testOptions").hide();
+      $("#buildOptions").hide();
+      $("#releaseOptions").hide();
+      $("#linksOptions").hide();
+      $("#priorityOptions").show();
+    });
+
+$("#severity").click(function(){
+      $("#statusOptions").hide();
+      $("#tagsOptions").hide();
+      $("#priorityOptions").hide();
+      $("#phaseOptions").hide();
+      $("#riskOptions").hide();
+      $("#testOptions").hide();
+      $("#buildOptions").hide();
+      $("#releaseOptions").hide();
+      $("#linksOptions").hide();
+      $("#severityOptions").show();
+    });
+
+$("#risk").click(function(){
+      $("#statusOptions").hide();
+      $("#phaseOptions").hide();
+      $("#priorityOptions").hide();
+      $("#severityOptions").hide();
+      $("#tagsOptions").hide();
+      $("#testOptions").hide();
+      $("#buildOptions").hide();
+      $("#releaseOptions").hide();
+      $("#linksOptions").hide();
+      $("#riskOptions").show();
+    });
+
+$("#test").click(function(){
+      $("#statusOptions").hide();
+      $("#phaseOptions").hide();
+      $("#priorityOptions").hide();
+      $("#severityOptions").hide();
+      $("#riskOptions").hide();
+      $("#tagsOptions").hide();
+      $("#buildOptions").hide();
+      $("#releaseOptions").hide();
+      $("#linksOptions").hide();
+      $("#testOptions").show();
+    });
+
+$("#build").click(function(){
+      $("#statusOptions").hide();
+      $("#phaseOptions").hide();
+      $("#priorityOptions").hide();
+      $("#severityOptions").hide();
+      $("#riskOptions").hide();
+      $("#testOptions").hide();
+      $("#tagsOptions").hide();
+      $("#releaseOptions").hide();
+      $("#linksOptions").hide();
+      $("#buildOptions").show();
+    });
+
+$("#release").click(function(){
+      $("#statusOptions").hide();
+      $("#phaseOptions").hide();
+      $("#priorityOptions").hide();
+      $("#severityOptions").hide();
+      $("#riskOptions").hide();
+      $("#testOptions").hide();
+      $("#buildOptions").hide();
+      $("#tagsOptions").hide();
+      $("#linksOptions").hide();
+      $("#releaseOptions").show();
+    });
+
+
+  });
+  
+</script>
+
+<style type="text/css">
+  .commentSection{
+    margin: 0% 10% 0% 10%;
+    padding: 10px 0px 10px 0px;
+    background: #ffffff;
+    border: 3px solid #000000;
+  }
+  .commentButtons{
+  
+  }
+  .actionButtons{
+  
+    margin-top: 0%;
+  }
+  .collapsableActionButtons
+  {
+  
+    margin-top: 0%;
+  }
+  .content-container
+  {
+    background: #3C8466;
+  }
+  .hr-header{
+    background: #DEEAC3;
+  }
+  .btn-subgroups
+  {
+    background: #439372;
+    color: #ffffff;
+  }
+  .btn-subgroups:focus
+  {
+    background: green;
+    color: #ffffff;
+  }
+  .btn-subgroups:hover
+  {
+    background: green;
+    color: #ffffff;
+  }
+</style>
+    
+  </head>
+  <body>
+  <div class="table-responsive">
+    <div style="background: #DEEAC3">
+        <div class="row">
+          <div class="col-8">
+          <a href="" class="btn btn-lg"><span class="glyphicon glyphicon-home" style="color:#2AA774;"></span></a>
+          <a href="" class="btn btn-lg"><span class="glyphicon glyphicon-floppy-disk" style="color:#2AA774;"></span></a>
+          <a href="" class="btn btn-lg"><span class="glyphicon glyphicon-eye-open" style="color:#2AA774;"></span></a>
+          <a href="" class="btn btn-lg"><span class="glyphicon glyphicon-thumbs-up" style="color:#2AA774;"></span> </a>
+          <!-- <a href="" class="btn btn-lg"><span class="glyphicon glyphicon-trash" style="color:#2AA774;"></span></a> -->
+          <a href="" class="btn btn-lg"><span class="glyphicon glyphicon-calendar" style="color:#2AA774;"></span></a>
+          <!-- <a href="" class="btn btn-lg"><span class="glyphicon glyphicon-eye-close" style="color:#2AA774;"></span></a> -->
+          <!--<a href=""><span class="glyphicon glyphicon-picture"></span></a>-->
+          <!--<a href=""><span class="glyphicon glyphicon-map-marker"></span></a>-->
+          <!--<a href=""><span class="glyphicon glyphicon-text-width"></span></a>-->
+          <!-- <a href="" class="btn btn-lg"><span class="glyphicon glyphicon-flag" style="color:#2AA774;"></span></a> -->
+          <a href="" class="btn btn-lg"><span class="glyphicon glyphicon-time" style="color:#2AA774;"></span></a>
+          <a href="" class="btn btn-lg"><span class="glyphicon glyphicon-user" style="color:#2AA774;"></span></a>
+          
+          <!--<a href=""><span class="glyphicon glyphicon-text-width"></span></a>-->
+          <!-- <a href="" class="btn btn-lg"><span class="glyphicon glyphicon-thumbs-up" style="color:#2AA774;"></span> </a> -->
+          <!--<a href=""><span class="glyphicon glyphicon-filter"></span>-->
+          <!-- <a href="" class="btn btn-lg"><span class="glyphicon glyphicon-copyright-mark" style="color:#2AA774;"></span></a>
+          <a href="" class="btn btn-lg"><span class="glyphicon glyphicon-registration-mark" style="color:#2AA774;"></span></a> -->
+          
+          </div>
+          <div class="col-4" style="margin-top: 1%">
+          <form>
+          <div class="input-group">
+            <input id="search" type="text" class="form-control" name="search" placeholder="Type text here...">
+            <span class="input-group-addon" style="color:"><i class="glyphicon glyphicon-search" style="color: #2AA774;"></i></span>
+          </div>
+          </form>
+          </div>
+      
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <td style="background: #439372">
+          <div class="row">
+          <div class="col-6" align="right">
+              <h5 style="color: #ffffff;">Board1</h5>
+              </div>
+              <div class="col-6" align="left">
+              <a href="" class="btn btn-md"><span class="glyphicon glyphicon-pencil" style="color:#ffffff;"></span></a>
+              <a href="" class="btn btn-md"><span class="glyphicon glyphicon-th" style="color:#ffffff;"></span></a>
+              <a href="" class="btn btn-md"><span class="fa fa-user-plus" style="color: #ffffff"></span>  </a>
+              <a href="" class="btn btn-md"><span class="glyphicon glyphicon-sort-by-attributes" style="color:#ffffff;"></span></a> 
+              <a href="" class="btn btn-md"><span class="glyphicon glyphicon-sort-by-attributes-alt" style="color:#ffffff;"></span></a>
+              <a href="" class="btn btn-md"><span class="glyphicon glyphicon-export" style="color:#ffffff;"></span></a>
+              <a href="" class="btn btn-md"><span class="glyphicon glyphicon-import" style="color:#ffffff;"></span></a>  
+              </div>
+          </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Add comments container -->
+        <tr>
+          <td align="center" style="background:#3C8466; padding: -2%">
+          <div class="span4 proj-div" data-toggle="modal" data-target="#GSCCModal"><span class="glyphicon glyphicon-plus-sign" style="color: #ffffff;"></span></div>
+
+            <div id="GSCCModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-dismiss = "modal" aria-hidden="true">
+             <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-body">
+                  <div class="hr-header">
+                  <div class="commentButtons">
+                        <a href="" class="btn btn-sm"><span class="glyphicon glyphicon-alert" style="color:#2AA774;"></span> </a>
+                        <a href="" class="btn btn-sm"><span class="glyphicon glyphicon-calendar" style="color:#2AA774;"></span> </a>
+                        <a href="" class="btn btn-sm"><span class="glyphicon glyphicon-envelope" style="color:#2AA774;"></span> </a>
+                        <a href="" class="btn btn-sm"><span class="glyphicon glyphicon-link" style="color:#2AA774;"></span> </a>
+                        <a href="" class="btn btn-sm" id = "tags"><span class="glyphicon glyphicon-tag" style="color:#2AA774;"></span> </a>
+                        <a href="" class="btn btn-sm"><span class="fa fa-share-alt" style="color:#2AA774;"></span> </a>
+                        <a href="" class="btn btn-sm"><span class="glyphicon glyphicon-user" style="color:#2AA774;"></span> </a>
+                        <a href="" class="btn btn-sm"><span class="glyphicon glyphicon-time" style="color:#2AA774;"></span> </a>
+                    </div>
+                    
+                    <div class="actionButtons">
+                    <div class="btn-group">
+                          <button type="button" id = "status" class="btn btn-xs btn-success">Status</button>
+                          <button type="button" id = "phase" class="btn btn-xs btn-success">Phase</button>
+                          <button type="button" id = "priority" class="btn btn-xs btn-success">Priority</span></button>
+                          <button type="button" id = "severity" class="btn btn-xs btn-success">Severity</span></button>
+                          <button type="button" id = "risk" class="btn btn-xs btn-success">Risks</span></button>
+                          <button type="button" id = "test" class="btn btn-xs btn-success">Test</span></button>
+                          <button type="button" id = "build" class="btn btn-xs btn-success">Build</span></button>
+                          <button type="button" id = "release" class="btn btn-xs btn-success">Release</span></button>
+                          <!-- <button type="button" class="btn btn-xs btn-success" id = "tags">Tags</button>
+                          <button type="button" class="btn btn-xs btn-success" id = "links">Links</button> -->
+                      </div></div>
+
+                      <div class="collapsableActionButtons">
+                          <div id="statusOptions" style="display: none;">
+                           <div class="btn-group">
+                           <button type="button" class="btn btn-xs btn-subgroups" id = "new">New</button>
+                              <button type="button" class="btn btn-xs btn-subgroups" id = "accepted">Accepted</button>
+                              <button type="button" id = "review" class="btn btn-xs btn-subgroups">Review</button>
+                              <button type="button" id = "open" class="btn btn-xs btn-subgroups">Open</span></button>
+                              <button type="button" id = "assigned" class="btn btn-xs btn-subgroups">Assigned</span></button>
+                              <button type="button" id = "more info" class="btn btn-xs btn-subgroups">More Info</span></button>
+                              <button type="button" id = "closed" class="btn btn-xs btn-subgroups">Closed</span></button>
+                              <button type="button" id = "rejected" class="btn btn-xs btn-subgroups">Rejected</span></button>
+                              <button type="button" id = "new" class="btn btn-xs btn-subgroups fa fa-plus"></span></button>
+                            </div>
+                            </div>
+
+                          <div id="roleOptions" style="display: none;">
+                              <div class="btn-group">
+                              <button type="button" class="btn btn-xs btn-subgroups" id = "responsible">Responsible</button>
+                              <button type="button" id = "accountable" class="btn btn-xs btn-subgroups">Accountable</button>
+                              <button type="button" id = "consultative" class="btn btn-xs btn-subgroups">Consultative</span></button>
+                              <button type="button" id = "informative" class="btn btn-xs btn-subgroups">Informative</span></button>
+                              <button type="button" id = "new" class="btn btn-xs btn-subgroups fa fa-plus"></span></button>
+                              </div>
+                          </div>
+                           <div id="phaseOptions" style="display: none;">
+                            <div class="btn-group">
+                              <button type="button" class="btn btn-xs btn-subgroups" id = "planning">Plan</button>
+                              <button type="button" id = "analysis" class="btn btn-xs btn-subgroups">Analysis</button>
+                              <button type="button" id = "design" class="btn btn-xs btn-subgroups">Design</span></button>
+                              <button type="button" id = "dev" class="btn btn-xs btn-subgroups">Dev</span></button>
+                              <button type="button" id = "build" class="btn btn-xs btn-subgroups">Build</span></button>
+                              <button type="button" id = "test" class="btn btn-xs btn-subgroups">Test</span></button>
+                              <button type="button" id = "config" class="btn btn-xs btn-subgroups">Config</span></button>
+                              <button type="button" id = "deploy" class="btn btn-xs btn-subgroups">Deploy</span></button>
+                              <button type="button" id = "live" class="btn btn-xs btn-subgroups">Go live</span></button>
+                              <button type="button" id = "new" class="btn btn-xs btn-subgroups fa fa-plus"></span></button>
+                            </div>
+
+                      
+                           </div>
+                           <div id="tagsOptions" style="display: none;">
+                           <div class="btn-group">
+                           <button type="button" class="btn btn-xs btn-subgroups" id = "Tag1">Tag1</button>
+                           <button type="button" class="btn btn-xs btn-subgroups" id = "Tag2">Tag2</button>
+                           <button type="button" class="btn btn-xs btn-subgroups" id = "Tag3">Tag3</button>
+                           <button type="button" class="btn btn-xs btn-subgroups" id = "Tag4">Tag4</button>
+                           <button type="button" id = "new" class="btn btn-xs btn-subgroups fa fa-plus"></span></button>
+                            </div>
+                            </div>
+                           <div id="priorityOptions" style="display: none;">
+                           <div class="btn-group">
+                           <button type="button" class="btn btn-xs btn-subgroups" id = "none">None</button>
+                              <button type="button" class="btn btn-xs btn-subgroups" id = "low">Low</button>
+                              <button type="button" id = "medium" class="btn btn-xs btn-subgroups">Medium</button>
+                              <button type="button" id = "high" class="btn btn-xs btn-subgroups">High</span></button>
+                              <button type="button" id = "significant" class="btn btn-xs btn-subgroups">Significant</span></button>
+                              <button type="button" id = "critical" class="btn btn-xs btn-subgroups">Critical</span></button>
+                              <button type="button" id = "new" class="btn btn-xs btn-subgroups fa fa-plus"></span></button>
+                            </div>
+                           </div>
+                           <div id="severityOptions" style="display: none;">
+                           <div class="btn-group">
+                           <button type="button" class="btn btn-xs btn-subgroups" id = "none">None</button>
+                              <button type="button" class="btn btn-xs btn-subgroups" id = "minor">Minor</button>
+                              <button type="button" id = "moderate" class="btn btn-xs btn-subgroups">Moderate</button>
+                              <button type="button" id = "major" class="btn btn-xs btn-subgroups">Major</span></button>
+                              <button type="button" id = "high" class="btn btn-xs btn-subgroups">High</span></button>
+                              <button type="button" id = "catastrophic" class="btn btn-xs btn-subgroups">Catastrophic</span></button>
+                              <button type="button" id = "new" class="btn btn-xs btn-subgroups fa fa-plus"></span></button>
+
+                            </div>
+
+                           </div>
+                           <div id="riskOptions" style="display: none;">
+                           <div class="btn-group">
+
+                              <button type="button" class="btn btn-xs btn-subgroups" id = "lag">Lag</button>
+                              <button type="button" id = "aggressive" class="btn btn-xs btn-subgroups">Aggressive</button>
+                              <button type="button" id = "conflict" class="btn btn-xs btn-subgroups">Conflict</span></button>
+                              <button type="button" id = "misconfig" class="btn btn-xs btn-subgroups">Misconfig</span></button>
+                              <button type="button" id = "missing" class="btn btn-xs btn-subgroups">Missing</span></button>
+                              <button type="button" id = "new" class="btn btn-xs btn-subgroups fa fa-plus"></span></button>
+
+                            </div>
+                           </div>
+                           <div id="testOptions" style="display: none;">
+                           <div class="btn-group">
+                              <button type="button" class="btn btn-xs btn-subgroups" id = "code">Code Link</button>
+                              <button type="button" id = "run" class="btn btn-xs btn-subgroups">Run</button>
+                              <button type="button" id = "resume" class="btn btn-xs btn-subgroups">Resume</span></button>
+                              <button type="button" id = "stop" class="btn btn-xs btn-subgroups">Stop</span></button>
+                              <button type="button" id = "pass" class="btn btn-xs btn-subgroups">Pass</span></button>
+                              <button type="button" id = "delete" class="btn btn-xs btn-subgroups">Delete</span></button>
+                              <button type="button" id = "patch" class="btn btn-xs btn-subgroups">Patch</span></button>
+                              <button type="button" class="btn btn-xs btn-subgroups" id = "release">Release</button>
+                              <button type="button" id = "branch" class="btn btn-xs btn-subgroups">Branch</button>
+                              <button type="button" id = "trunk" class="btn btn-xs btn-subgroups">Trunk</span></button>
+                            </div>
+                           </div>
+                           <div id="buildOptions" style="display: none;">
+                           <div class="btn-group">
+                              <button type="button" class="btn btn-xs btn-subgroups" id = "code">Code Link</button>
+                              <button type="button" id = "run" class="btn btn-xs btn-subgroups">Run</button>
+                              <button type="button" id = "resume" class="btn btn-xs btn-subgroups">Resume</span></button>
+                              <button type="button" id = "stop" class="btn btn-xs btn-subgroups">Stop</span></button>
+                              <button type="button" id = "pass" class="btn btn-xs btn-subgroups">Pass</span></button>
+                              <button type="button" id = "delete" class="btn btn-xs btn-subgroups">Delete</span></button>
+                              <button type="button" id = "patch" class="btn btn-xs btn-subgroups">Patch</span></button>
+                              <button type="button" class="btn btn-xs btn-subgroups" id = "release">Release</button>
+                              <button type="button" id = "branch" class="btn btn-xs btn-subgroups">Branch</button>
+                              <button type="button" id = "trunk" class="btn btn-xs btn-subgroups">Trunk</span></button>
+                            </div>
+                           </div>
+                           <div id="releaseOptions" style="display: none;">
+                           <div class="btn-group">
+                              <button type="button" class="btn btn-xs btn-subgroups" id = "code">Code Link</button>
+                              <button type="button" id = "run" class="btn btn-xs btn-subgroups">Run</button>
+                              <button type="button" id = "resume" class="btn btn-xs btn-subgroups">Resume</span></button>
+                              <button type="button" id = "stop" class="btn btn-xs btn-subgroups">Stop</span></button>
+                              <button type="button" id = "pass" class="btn btn-xs btn-subgroups">Pass</span></button>
+                              <button type="button" id = "delete" class="btn btn-xs btn-subgroups">Delete</span></button>
+                              <button type="button" id = "patch" class="btn btn-xs btn-subgroups">Patch</span></button>
+                              <button type="button" class="btn btn-xs btn-subgroups" id = "release">Release</button>
+                              <button type="button" id = "branch" class="btn btn-xs btn-subgroups">Branch</button>
+                              <button type="button" id = "trunk" class="btn btn-xs btn-subgroups">Trunk</span></button>
+                            </div>
+                           </div>
+
+                           <div id="linksOptions" style="display: none;">
+                           <div class="btn-group">
+                              <button type="button" class="btn btn-xs btn-subgroups" id = "story_link">User Story</button>
+                              <button type="button" id = "feature_link" class="btn btn-xs btn-subgroups">Feature</button>
+                              <button type="button" id = "milestone_link" class="btn btn-xs btn-subgroups">MileStone</span></button>
+                              <button type="button" id = "link4" class="btn btn-xs btn-subgroups">Link 4</span></button>
+                              
+                            </div>
+                           </div>
+                      </div>   
+
+                        <form>
+                          <div class="input-group">
+                            <textarea class="form-control" rows="2" id="comment" placeholder="Enter comments here ..."></textarea>
+                            <span class="input-group-addon" style="color;"><i class="glyphicon glyphicon-pencil" style="color: #2AA774;"></i></span>
+                            <span class="input-group-addon" style="color;"><i class="glyphicon glyphicon-floppy-disk" style="color: #2AA774;"></i></span>
+                            <span class="input-group-addon" style="color;"><i class="glyphicon glyphicon-remove-sign" style="color: #2AA774;"></i></span>
+                            <span class="input-group-addon" style="color;"><i class="glyphicon glyphicon-th" style="color: #2AA774;"></i></span>
+
+                          </div>
+                        </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <!-- comments container -->
+        <tr>
+          <td align="center" style="background:#68A88E">
+            <div id = "commentBox" class="commentSection"> </div>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+    </div>
+  </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script type="text/javascript">
+        
+        $(function() {
+          // For enter button
+          $("#comment").keypress(function (e) {
+              if(e.which == 13) {
+                  //submit form via ajax, this is not JS but server side scripting so not showing here
+                  $('#GSCCModal').modal('hide');
+                  $('body').removeClass('modal-open');
+                  $('.modal-backdrop').remove();
+                  $("#commentBox").append($(this).val() + "<br/>");
+                  $(this).val("");
+                  //e.preventDefault();
+              }
+          });
+      });
+
+      </script>
+     <!-- <script>
+function sortTable(n) {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("myTable2");
+  switching = true;
+  // Set the sorting direction to ascending:
+  dir = "asc"; 
+  /* Make a loop that will continue until
+  no switching has been done: */
+  while (switching) {
+    // Start by saying: no switching is done:
+    switching = false;
+    rows = table.getElementsByTagName("TR");
+    /* Loop through all table rows (except the
+    first, which contains table headers): */
+    for (i = 1; i < (rows.length - 1); i++) {
+      // Start by saying there should be no switching:
+      shouldSwitch = false;
+      /* Get the two elements you want to compare,
+      one from current row and one from the next: */
+      x = rows[i].getElementsByTagName("TD")[n];
+      y = rows[i + 1].getElementsByTagName("TD")[n];
+      /* Check if the two rows should switch place,
+      based on the direction, asc or desc: */
+      if (dir == "asc") {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          // If so, mark as a switch and break the loop:
+          shouldSwitch= true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          // If so, mark as a switch and break the loop:
+          shouldSwitch= true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      /* If a switch has been marked, make the switch
+      and mark that a switch has been done: */
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      // Each time a switch is done, increase this count by 1:
+      switchcount ++; 
+    } else {
+      /* If no switching has been done AND the direction is "asc",
+      set the direction to "desc" and run the while loop again. */
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+</script>
+-->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
