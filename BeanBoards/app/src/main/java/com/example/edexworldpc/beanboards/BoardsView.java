@@ -35,7 +35,8 @@ public class BoardsView extends Fragment {
         wBview = (WebView) gview.findViewById(R.id.wBview);
         WebSettings webSettings = wBview.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        String url = "https://bbm-staging-194118.appspot.com/BoardsView";
+        String url = "https://bbm-staging-194118.appspot.com/BoardsView?id=5a998af86669130010cbfbb4";
+        //String url = "http://10.0.2.2:3000/BoardsView";
 
         wBview.loadUrl(url);
         //wBview.postUrl(url);

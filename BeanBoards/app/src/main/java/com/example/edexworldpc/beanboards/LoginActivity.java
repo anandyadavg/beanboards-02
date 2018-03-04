@@ -3,6 +3,9 @@ package com.example.edexworldpc.beanboards;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Handler;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +24,7 @@ import java.util.HashMap;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener, AsyncResponse {
 
+    boolean doubleBackToExitPressedOnce=false;
     EditText edittext_email, edittext_password;
     Button btn_login;
     TextView linkRegister;
@@ -42,6 +46,29 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
+
+    }
+
+    @Override
     public void onClick(View view) {
         switch (view.getId())
         {
@@ -59,6 +86,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     postData.put("password", edittext_password.getText().toString());
                     PostResponseAsyncTask task = new PostResponseAsyncTask(LoginActivity.this, postData);
                     task.execute("https://bbm-staging-194118.appspot.com/loginService");
+                    //task.execute("http://10.0.2.2:3000/loginService");
                 }
 
                 break;

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.ContactsContract;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,10 +19,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
+    boolean doubleBackToExitPressedOnce=false;
     ImageView img_retrotimer, img_story_teller, img_sprint_runner, img_kanban_winner, img_product_owner;
     ImageView img_score_keeper, img_notifications, img_time_tracker, img_team;
     SharedPreferences navSession;
@@ -93,7 +96,25 @@ public class MainActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            if (doubleBackToExitPressedOnce) {
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_HOME);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                return;
+            }
+
+            this.doubleBackToExitPressedOnce = true;
+            Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+            new Handler().postDelayed(new Runnable() {
+
+                @Override
+                public void run() {
+                    doubleBackToExitPressedOnce=false;
+                }
+            }, 2000);
+
         }
     }
 
@@ -125,7 +146,7 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_backlogs) {
+        /*if (id == R.id.nav_backlogs) {
             // Handle the camera action
         } else if (id == R.id.nav_kanban) {
 
@@ -136,18 +157,16 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_retro_boards) {
 
         }
-        else if(id == R.id.nav_logout){
+        else*/ if(id == R.id.nav_logout){
             // Log out
             SharedPreferences sharedPreferences = getSharedPreferences("LoginPreference", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.clear();
-            editor.apply();
             editor.commit();
 
             SharedPreferences userAction = getSharedPreferences("ÜserAction", Context.MODE_PRIVATE);
             SharedPreferences.Editor edit_userAction = sharedPreferences.edit();
             edit_userAction.clear();
-            edit_userAction.apply();
             edit_userAction.commit();
 
             startActivity(new Intent(this, LoginActivity.class));
@@ -164,55 +183,55 @@ public class MainActivity extends AppCompatActivity
         {
             case R.id.img_retro:
                 SharedPreferences.Editor edit = navSession.edit();
-                edit.putString("userTheme","RetroBoard");
+                edit.putString("userTheme","Retro Timer");
                 edit.commit();
                 startActivity(new Intent(this, CheckAuthentication.class));
                 break;
             case R.id.img_notifications:
                 SharedPreferences.Editor edit_img_notification = navSession.edit();
-                edit_img_notification.putString("userTheme","notification");
+                edit_img_notification.putString("userTheme","Alerts Messenger");
                 edit_img_notification.commit();
                 startActivity(new Intent(this, CheckAuthentication.class));
                 break;
             case R.id.img_kanban_winner:
                 SharedPreferences.Editor edit_kanban = navSession.edit();
-                edit_kanban.putString("userTheme","kanban");
+                edit_kanban.putString("userTheme","Kanban Winner");
                 edit_kanban.commit();
                 startActivity(new Intent(this, CheckAuthentication.class));
                 break;
             case R.id.img_product_owner:
                 SharedPreferences.Editor edit_product = navSession.edit();
-                edit_product.putString("userTheme","product");
+                edit_product.putString("userTheme","Product Owner");
                 edit_product.commit();
                 startActivity(new Intent(this, CheckAuthentication.class));
                 break;
             case R.id.img_score_keeper:
                 SharedPreferences.Editor edit_score = navSession.edit();
-                edit_score.putString("userTheme","scorekeeper");
+                edit_score.putString("userTheme","Scrum Master");
                 edit_score.commit();
                 startActivity(new Intent(this, CheckAuthentication.class));
                 break;
             case R.id.img_sprint_runner:
                 SharedPreferences.Editor edit_sprint = navSession.edit();
-                edit_sprint.putString("userTheme","sprintrunner");
+                edit_sprint.putString("userTheme","Sprint Runner");
                 edit_sprint.commit();
                 startActivity(new Intent(this, CheckAuthentication.class));
                 break;
             case R.id.img_story_teller:
                 SharedPreferences.Editor edit_story = navSession.edit();
-                edit_story.putString("userTheme","storyteller");
+                edit_story.putString("userTheme","Story Teller");
                 edit_story.commit();
                 startActivity(new Intent(this, CheckAuthentication.class));
                 break;
             case R.id.img_team:
                 SharedPreferences.Editor edit_team = navSession.edit();
-                edit_team.putString("userTheme","team");
+                edit_team.putString("userTheme","My Teams");
                 edit_team.commit();
                 startActivity(new Intent(this, CheckAuthentication.class));
                 break;
             case R.id.img_time_tracker:
                 SharedPreferences.Editor edit_time_tracker = navSession.edit();
-                edit_time_tracker.putString("userTheme","time_tracker");
+                edit_time_tracker.putString("userTheme","Time Tracker");
                 edit_time_tracker.commit();
                 startActivity(new Intent(this, CheckAuthentication.class));
                 break;

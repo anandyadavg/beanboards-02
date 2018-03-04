@@ -26,7 +26,7 @@ public class CheckAuthentication extends AppCompatActivity {
         else
         {
          //   startActivity(new Intent(this, MainActivity.class));
-            startActivity(new Intent(this, LandingPage2.class));
+            startActivity(new Intent(this, LandingPage.class));
         }
     }
 }

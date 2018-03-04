@@ -6,151 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/ejs.js"></script>
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    function navigateHome(toast) {
+        Android.navigateHome(toast);
+    }
+</script>
+
+<style type="text/css">
+  .btn-nav
+  {
+    background: #DEEAC3;
+  }
+</style>
 
     
   </head>
   <body>
   <div>
   <div style="background: #DEEAC3">
-  <div class="row">
-    <div class="col-8">
-      <a href="" class="btn btn-lg"><span class="glyphicon glyphicon-home" style="color:#2AA774;"></span></a>
-      <a href="" class="btn btn-lg"><span class="glyphicon glyphicon-floppy-disk" style="color:#2AA774;"></span></a>
-      <a href="" class="btn btn-lg"><span class="glyphicon glyphicon-plus-sign" style="color:#2AA774;"></span></a>
-    <!--   <a href="" class="btn btn-lg"><span class="glyphicon glyphicon-remove-sign"></span></a>
-     --><!--   <a href="" class="btn btn-lg"><span class="glyphicon glyphicon-trash"></span></a> -->
-      <!-- <a href="" class="btn btn-lg"><span class="glyphicon glyphicon-calendar"></span></a> -->
-      <!-- <a href="" class="btn btn-lg"><span class="glyphicon glyphicon-eye-open"></span></a>
-      <a href="" class="btn btn-lg"><span class="glyphicon glyphicon-eye-close"></span></a> -->
-      <!--<a href=""><span class="glyphicon glyphicon-picture"></span></a>-->
-      <!--<a href=""><span class="glyphicon glyphicon-map-marker"></span></a>-->
-      <!--<a href=""><span class="glyphicon glyphicon-text-width"></span></a>-->
-      <!-- <a href="" class="btn btn-lg"><span class="glyphicon glyphicon-flag"></span></a> -->
-      <!-- <a href="" class="btn btn-lg"><span class="glyphicon glyphicon-time"></span></a> -->
-      <!-- <a href="" class="btn btn-lg"><span class="glyphicon glyphicon-pencil"></span></a> -->
+  <div style="background: #7ee44b; padding-top:2.5%; padding-bottom:2.5%" align="center">
+    <b style="color: #ffffff;">My Boards</b></div>
+  <!-- Nav bar begins -->
+    
+      <button type="button" title="Home" onclick="navigateHome('home')" class="btn btn-lg btn-nav"><span class="glyphicon glyphicon-home" style="color:#2AA774;"></span></button>
+       <button class="btn btn-lg" id="saveBoard" title="Save Board"><span class="glyphicon glyphicon-floppy-disk" style="color:#2AA774;"></span></button>
+      <a id="actionAddBoard" class="btn btn-lg btn-nav"  title="Add Board" ><span class="glyphicon glyphicon-plus-sign" style="color:#2AA774;"></span></a>
       
-      <!--<a href=""><span class="glyphicon glyphicon-text-width"></span></a>-->
-      <!-- <a href="" class="btn btn-lg"><span class="glyphicon glyphicon-flag" ></span></a>  -->
-      <!-- <a href=""><span class="glyphicon glyphicon-thumbs-up"></span> </a> -->
-      <a href="" class="btn btn-lg"><span class="glyphicon glyphicon-filter" style="color:#2AA774;"></span></a>
-      <!-- <a href="" class="btn btn-lg"><span class="glyphicon glyphicon-copyright-mark"></span></a>
-      <a href="" class="btn btn-lg"><span class="glyphicon glyphicon-registration-mark"></span></a> -->
-      
-      <!-- <a href=""><span class="glyphicon glyphicon-export"></span></a>
-      <a href=""><span class="glyphicon glyphicon-import"></span></a>   -->
-      <!-- <a href=""><span class="glyphicon glyphicon-sort-by-attributes"></span></a> 
-      <a href=""><span class="glyphicon glyphicon-sort-by-attributes-alt"></span></a> -->
-      <!-- <a href=""><span class="glyphicon glyphicon-user"></span></a> -->
-      <!-- <a href=""><span class="glyphicon glyphicon-th"></span></a> -->
-    </div>
-    <div class="col-4" style="margin-top: 1%">
-          
+      <a href="" title = "Filter Boards"class="btn btn-lg"><span class="glyphicon glyphicon-filter" style="color:#2AA774;"></span></a>
+    
+    <div style="margin-left: 65%; margin-top:-6%; padding-bottom: 1%;">
           <div class="input-group">
             <input type="text" id = "search_myboards" class="form-control" name="search" placeholder="Type text here...">
-            <span class="input-group-addon" style="color:"><i class="glyphicon glyphicon-search" style="color: #2AA774;"></i></span>
+            <span class="input-group-addon" ><i class="glyphicon glyphicon-search" style="color: #2AA774;"></i></span>
+          </div>
           </div>
           
-          </div>
-  </div>
-  </div>
+    
+          <!-- Nav bar begins -->
+    </div>
 
+<div id="results"></div>
 <div class="table-responsive">
   <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">Peek</th>
-      <th scope="col">Name</th>
       <th scope="col">Public</th>
-      <th scope="col">Watchers</th>
+      <th scope="col">Type</th>
+      <th scope="col">Name</th>
+      <th scope="col">View</th>
+      <th scope="col">Members</th>
       <th scope="col">Likes</th>
+      <th scope="col">Watchers</th>
       <th scope="col">Delete</th>
       <th scope="col">Calendar</th>
     </tr>
   </thead>
-  <tbody id = "myBoardsTable">
-    <tr>
-    <td><button href="" class="btn btn-lg" style="background: #ffffff"><span class="glyphicon glyphicon-eye-open" style="color: #2AA774;"></span></button></td>
-      <td scope="row">Board1</td>
-      <td>Yes</td>
-      <td>5</td>
-      <td>5</td>
-      <td><button type="button" class="btn btn-lg" style="background: #ffffff;">
-          <span class="glyphicon glyphicon-trash" style="color:#800000;"></span>  
-        </button></td>
-      <td><button href="" class="btn btn-lg" style="background: #ffffff"><span class="glyphicon glyphicon-calendar" style="color: #2AA774;"></span></button></td>
-      
-    </tr>
-    <tr>
-    <td><button href="" class="btn btn-lg" style="background: #ffffff"><span class="glyphicon glyphicon-eye-open" style="color: #2AA774;"></span></button></td>
-      <td scope="row">Board2</td>
-      <td>No</td>
-      <td>4</td>
-      <td>4</td>
-      <td><button type="button" class="btn btn-lg" style="background: #ffffff;">
-          <span class="glyphicon glyphicon-trash" style="color:#800000;"></span>  
-        </button></td>
-      <td><button href="" class="btn btn-lg" style="background: #ffffff"><span class="glyphicon glyphicon-calendar" style="color: #2AA774;"></span></button></td>
-      
-    </tr><tr>
-    <td><button href="" class="btn btn-lg" style="background: #ffffff"><span class="glyphicon glyphicon-eye-open" style="color: #2AA774;"></span></button></td>
-      <td scope="row">Board3</td>
-      <td>Yes</td>
-      <td>5</td>
-      <td>5</td>
-      <td><button type="button" class="btn btn-lg" style="background: #ffffff;">
-          <span class="glyphicon glyphicon-trash" style="color:#800000;"></span>  
-        </button></td>
-      <td><button href="" class="btn btn-lg" style="background: #ffffff"><span class="glyphicon glyphicon-calendar" style="color: #2AA774;"></span></button></td>
-      
-    </tr><tr>
-    <td><button href="" class="btn btn-lg" style="background: #ffffff"><span class="glyphicon glyphicon-eye-open" style="color: #2AA774;"></span></button></td>
-      <td scope="row">Board4</td>
-      <td>No</td>
-      <td>6</td>
-      <td>6</td>
-      <td><button type="button" class="btn btn-lg" style="background: #ffffff;">
-          <span class="glyphicon glyphicon-trash" style="color:#800000;"></span>  
-        </button></td>
-      <td><button href="" class="btn btn-lg" style="background: #ffffff"><span class="glyphicon glyphicon-calendar" style="color: #2AA774;"></span></button></td>
-      
-    </tr><tr>
-    <td><button href="" class="btn btn-lg" style="background: #ffffff"><span class="glyphicon glyphicon-eye-open" style="color: #2AA774;"></span></button></td>
-      <td scope="row">Board5</td>
-      <td>Yes</td>
-      <td>3</td>
-      <td>3</td>
-      <td><button type="button" class="btn btn-lg" style="background: #ffffff;">
-          <span class="glyphicon glyphicon-trash" style="color:#800000;"></span>  
-        </button></td>
-      <td><button href="" class="btn btn-lg" style="background: #ffffff"><span class="glyphicon glyphicon-calendar" style="color: #2AA774;"></span></button></td>
-      
-    </tr><tr>
-    <td><button href="" class="btn btn-lg" style="background: #ffffff"><span class="glyphicon glyphicon-eye-open" style="color: #2AA774;"></span></button></td>
-      <td scope="row">Board6</td>
-      <td>No</td>
-      <td>5</td>
-      <td>5</td>
-      <td><button type="button" class="btn btn-lg" style="background: #ffffff;">
-          <span class="glyphicon glyphicon-trash" style="color:#800000;"></span>  
-        </button></td>
-      <td><button href="" class="btn btn-lg" style="background: #ffffff"><span class="glyphicon glyphicon-calendar" style="color: #2AA774;"></span></button></td>
-      
-    </tr>
-  </tbody>
+  <tbody id = "myBoardsTable"></tbody>
 </table>
 </div>
 
 </div>
-<script>
+<script>  
       $(document).ready(function(){
         $("#search_myboards").on("keyup", function() {
           var value = $(this).val().toLowerCase();
@@ -160,10 +87,142 @@
         });
       });
       </script>
+
+  <script type="text/javascript">
+      function GetURLParameter(sParam)
+          {
+          var sPageURL = window.location.search.substring(1);
+          var sURLVariables = sPageURL.split('&');
+          for (var i = 0; i < sURLVariables.length; i++)
+          {
+              var sParameterName = sURLVariables[i].split('=');
+              if (sParameterName[0] == sParam)
+              {
+                  return decodeURIComponent(sParameterName[1]);
+              }
+          }
+      }
+</script>
+
+  <script>
+        $(document).ready(function () {
+          $("#actionAddBoard").on('click', function () {
+
+              var moduleName = GetURLParameter('module');
+              //console.log($("#actionAddBoard").serializeArray());
+              $.ajax({
+                  type: 'POST',
+                  url: '/addBoardService',
+                  data: {moduleName: moduleName},
+                  success: function (data) {
+                      console.log(data);
+                      location.reload();
+                      //$('#results').html(data);
+                      //$('#submit').hide();
+                  }
+              });
+          });
+      });
+  </script>
+
+  <script>
+    $(document).ready(function(){
+      $.ajax({
+            url: "/getBoardsService",
+            contentType: "application/json; charset=UTF-8",
+            dataType: "JSON",
+            type: "GET",
+            success: function (response) {
+              for (var i = 0; i < response.length; i++) {
+               var _id = response[i]._id;
+               var public = response[i].public;
+               var type  = response[i].type;
+               var name = response[i].name;
+               var peek = response[i].peek;
+               var watchers = response[i].watchers;
+               var likes = response[i].likes;
+               //console.log(_id);
+               
+                  $('table #myBoardsTable').append('<tr><td><span class="'+_id+'">'+public+'</span></td><td><span class="'+_id+'">'+type+'</span></td><td scope = "row"><div><span class="p_click" id="'+_id+'">'+name+'</span></div><div class = "p_option" id="'+_id+'Action" style="display: none;"><input type="text" id = "input'+_id+'"class="form-control" placeholder="Enter your board name "></input></div></td><td><a id="'+_id+'" href="BoardsView?id='+_id+'" class="btn btn-md view" style="background: #ffffff"><span  class="glyphicon glyphicon-eye-open" style="color: #2AA774;"></span></button></td><td>1</td><td align="center">'+likes+'</td><td align="center">'+watchers+'</td><td><button href = "" type="submit" value = "'+_id+'" id = "deleteBoard" class="btn btn-md" style="background: #ffffff;"><span class="glyphicon glyphicon-trash" style="color:#800000;"></span></button></td><td><button href="" class="btn btn-md" style="background: #ffffff"><span class="glyphicon glyphicon-calendar" style="color: #2AA774;"></span></button></td></tr>') ;
+            }
+
+                
+
+                $(document).on("click",".p_click", function(){
+                  var identifier = $(this).attr("id");
+                  console.log(identifier);
+                  $("#"+identifier).hide();
+                  $("#"+identifier+"Action").show();
+                  $(".p_click").not("#"+identifier).show();
+                  $(".p_option").not("#"+identifier+"Action").hide();
+                  $(document).on('click','#saveBoard', function(e){
+
+                      //alert($("#input"+identifier).val());  
+                      //console.log($("#input"+identifier).val());
+                      var value = $("#input"+identifier).val();
+                      e.preventDefault();
+                      if(value == "")
+                         {
+                           alert("Please enter value");
+                         }
+                         else
+                         {
+                          //alert("Entered value is: "+value);
+                          console.log(value);
+                          console.log(identifier);
+                          $.ajax({
+                              type: 'POST',
+                              url: '/updateBoardTitle',
+                              data: {_id:identifier, title: value},
+
+                              success: function (data) {
+                                  console.log(data);
+                                  location.reload();
+                              }
+                          });
+                         }
+
+
+                  });
+                                  /*var identifier = $(this).attr("class");
+                  }
+                $("."+identifier).hide();
+                $("."+identifier+"Action").show();
+                $("#p_click").not("."+identifier).hide();
+                $("#peek_option").not("."+identifier).show();*/  
+              });
+
+              
+                //$("#result").html(response[0]._id);
+                //console.log(response[0].peek);
+            }
+        });
+      
+    });
+  </script>
+
+  <script>
+        $(document).ready(function () {
+          $(document).on('click',"#deleteBoard", function () {
+
+            var form = $(this).attr("value");
+
+              //console.log($("#actionAddBoard").serializeArray());
+              $.ajax({
+                  type: 'GET',
+                  url: '/deleteBoardService',
+                  data: {_id:form},
+
+                  success: function (data) {
+                      console.log(data);
+                      location.reload();
+                  }
+              });
+          });
+      });
+  </script>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-    
-    
   </body>
 </html>

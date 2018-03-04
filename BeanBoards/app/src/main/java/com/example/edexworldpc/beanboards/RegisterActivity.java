@@ -2,6 +2,7 @@ package com.example.edexworldpc.beanboards;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,7 +20,7 @@ import java.util.HashMap;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener, AsyncResponse {
 
-
+    boolean doubleBackToExitPressedOnce=false;
     EditText  edittext_email, edittext_password, edittext_username, edittext_confirm_password ;
     EditText edittext_phone, edittext_organization;
     Button btn_register;
@@ -37,6 +38,11 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         edittext_phone = (EditText)findViewById(R.id.edittext_phone);
         edittext_username = (EditText)findViewById(R.id.edittext_username);
         btn_register.setOnClickListener(this);
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
     }
 
     @Override
@@ -82,6 +88,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     postData.put("phone", edittext_phone.getText().toString());
                     PostResponseAsyncTask task = new PostResponseAsyncTask(RegisterActivity.this, postData);
                     task.execute("https://bbm-staging-194118.appspot.com/addUserService");
+                    //task.execute("http://10.0.2.2:3000/addUserService");
                 }
                 break;
         }

@@ -1,0 +1,61 @@
+<style type="text/css">
+  .commentSection{
+    margin: 0% 10% 0% 10%;
+    padding: 10px 0px 10px 0px;
+    background: #ffffff;
+    -moz-box-shadow: 1px 1px 3px 2px #dbc8ff;
+    -webkit-box-shadow: 1px 1px 3px 2px #dbc8ff;
+    box-shadow: 1px 1px 3px 2px #dbc8ff;
+  }
+  .commentButtons{
+  
+  }
+  .actionButtons{
+  
+    margin-top: 0%;
+  }
+  .collapsableActionButtons
+  {
+  
+    margin-top: 0%;
+  }
+  .show_selection
+  {
+    background: #ffffff;
+    padding-top: 2%;
+
+  }
+  .selection_font
+  {
+    font-size: 12px;
+    background: #DEEAC3;
+  }
+  .sub_font
+  {
+    font-size: 12px;
+    font-weight: bold;
+    font-style: italic; 
+  }
+  .content-container
+  {
+    background: #3C8466;
+  }
+  .hr-header{
+    background: #DEEAC3;
+  }
+  .btn-subgroups
+  {
+    background: #439372;
+    color: #ffffff;
+  }
+  .btn-subgroups:focus
+  {
+    background: green;
+    color: #ffffff;
+  }
+  .btn-subgroups:hover
+  {
+    background: green;
+    color: #ffffff;
+  }
+</style>

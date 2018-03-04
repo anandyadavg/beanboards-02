@@ -6,11 +6,11 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_search_boards"
-            android:title="Search Boards" />
+            android:title="Search" />
         <item
             android:id="@+id/nav_dashboard"
-            android:title="DashBoard" />
-        <item
+            android:title="Analytics" />
+        <!--<item
             android:id="@+id/nav_user_profile"
             android:title="User Profile" />
         <item
@@ -51,7 +51,7 @@
         <item
             android:id="@+id/nav_portfolio"
             android:title="Portfolio" />
-
+-->
         <item
             android:id="@+id/nav_logout"
             android:title="Logout" />

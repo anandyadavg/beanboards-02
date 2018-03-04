@@ -1,14 +1,18 @@
 package com.example.edexworldpc.beanboards;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ProgressBar;
@@ -27,6 +31,8 @@ public class MyBoardsFragment extends Fragment {
 
         return inflater.inflate(R.layout.fragment_my_boards, container, false);
     }
+
+
     @Override
     public void onViewCreated(final View gview, Bundle savedInstanceState) {
         // Setup any handles to view objects here
@@ -37,7 +43,23 @@ public class MyBoardsFragment extends Fragment {
         wBview = (WebView) gview.findViewById(R.id.wBview);
         WebSettings webSettings = wBview.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        String url = "https://bbm-staging-194118.appspot.com/MyBoards";
+        wBview.addJavascriptInterface(new Object(){
+            @JavascriptInterface
+            public void navigateHome(String toast) {
+                if(toast.equals("home"))
+                {
+                    startActivity(new Intent(getContext(), MainActivity.class));
+                }
+                else if(toast.contains("peek"))
+                {
+                    Toast.makeText(getContext(), toast, Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(getContext(), BoardsView.class));
+                }
+                return;
+            }
+        }, "Android");
+        //String url = "https://bbm-staging-194118.appspot.com/MyBoards";
+        String url = "http://10.0.2.2:3000/MyBoards";
 
         wBview.loadUrl(url);
         //wBview.postUrl(url);

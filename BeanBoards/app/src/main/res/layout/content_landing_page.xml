@@ -17,8 +17,8 @@
         />
 
     <WebView
-        android:id="@+id/board"
-        android:layout_width="fill_parent"
+        android:id="@+id/wBview"
+        android:layout_width="wrap_content"
         android:layout_height="fill_parent"
         android:layout_below="@id/progressBar" />
 

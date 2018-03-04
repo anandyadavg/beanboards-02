@@ -106,7 +106,7 @@
                     android:layout_gravity="left"
                     android:layout_marginRight="50dp"
                     android:tooltipText="Retro"
-                    app:srcCompat="@drawable/scorekeeper"
+                    app:srcCompat="@drawable/scrummaster"
                     tools:layout_editor_absoluteX="16dp"
                     tools:layout_editor_absoluteY="34dp" />
 
@@ -126,7 +126,7 @@
                     android:layout_gravity="left"
                     android:layout_marginRight="10dp"
                     android:tooltipText="Retro"
-                    app:srcCompat="@drawable/alertpager"
+                    app:srcCompat="@drawable/alertmessenger"
                     tools:layout_editor_absoluteX="16dp"
                     tools:layout_editor_absoluteY="34dp" />
 

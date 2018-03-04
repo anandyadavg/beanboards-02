@@ -1,6 +1,9 @@
 package com.example.edexworldpc.beanboards;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.sax.StartElementListener;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -23,6 +26,9 @@ public class LandingPage2 extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing_page2);
+        SharedPreferences navSession = getSharedPreferences("ÜserAction", Context.MODE_PRIVATE);
+        String title = navSession.getString("userTheme", null);
+        setTitle(title);
         mAdapter = new CustomPagerAdapter(getSupportFragmentManager());
         mtoolBar = (Toolbar)findViewById(R.id.app_bar);
         setSupportActionBar(mtoolBar);

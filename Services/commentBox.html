@@ -1,1 +1,402 @@
-<h5 style="color: #ffffff;">Went Well !!</h5>
+ <script>
+  $(document).ready(function(){
+    $("#tags").click(function(){
+      $("#statusOptions").hide();
+      $("#phaseOptions").hide();
+      $("#priorityOptions").hide();
+      $("#severityOptions").hide();
+      $("#riskOptions").hide();
+      $("#testOptions").hide();
+      $("#buildOptions").hide();
+      $("#releaseOptions").hide();
+      $("#linksOptions").hide();
+      $("#tagsOptions").show();
+
+    });
+
+    $("#links").click(function(){
+      $("#statusOptions").hide();
+      $("#phaseOptions").hide();
+      $("#priorityOptions").hide();
+      $("#severityOptions").hide();
+      $("#riskOptions").hide();
+      $("#testOptions").hide();
+      $("#buildOptions").hide();
+      $("#releaseOptions").hide();
+      $("#tagsOptions").hide();
+      $("#linksOptions").show();
+
+    });
+
+    $("#status").click(function(){
+      $("#phaseOptions").hide();
+      $("#priorityOptions").hide();
+      $("#severityOptions").hide();
+      $("#riskOptions").hide();
+      $("#testOptions").hide();
+      $("#buildOptions").hide();
+      $("#releaseOptions").hide();
+      $("#tagsOptions").hide();
+      $("#linksOptions").hide();
+      $("#statusOptions").show();
+    });
+
+
+$("#phase").click(function(){
+  $("#statusOptions").hide();
+      $("#tagsOptions").hide();
+      $("#priorityOptions").hide();
+      $("#severityOptions").hide();
+      $("#riskOptions").hide();
+      $("#testOptions").hide();
+      $("#buildOptions").hide();
+      $("#releaseOptions").hide();
+      $("#linksOptions").hide();
+      $("#phaseOptions").show();
+    });
+
+$("#priority").click(function(){
+      $("#statusOptions").hide();
+      $("#tagsOptions").hide();
+      $("#phaseOptions").hide();
+      $("#severityOptions").hide();
+      $("#riskOptions").hide();
+      $("#testOptions").hide();
+      $("#buildOptions").hide();
+      $("#releaseOptions").hide();
+      $("#linksOptions").hide();
+      $("#priorityOptions").show();
+    });
+
+$("#severity").click(function(){
+      $("#statusOptions").hide();
+      $("#tagsOptions").hide();
+      $("#priorityOptions").hide();
+      $("#phaseOptions").hide();
+      $("#riskOptions").hide();
+      $("#testOptions").hide();
+      $("#buildOptions").hide();
+      $("#releaseOptions").hide();
+      $("#linksOptions").hide();
+      $("#severityOptions").show();
+    });
+
+$("#risk").click(function(){
+      $("#statusOptions").hide();
+      $("#phaseOptions").hide();
+      $("#priorityOptions").hide();
+      $("#severityOptions").hide();
+      $("#tagsOptions").hide();
+      $("#testOptions").hide();
+      $("#buildOptions").hide();
+      $("#releaseOptions").hide();
+      $("#linksOptions").hide();
+      $("#riskOptions").show();
+    });
+
+$("#test").click(function(){
+      $("#statusOptions").hide();
+      $("#phaseOptions").hide();
+      $("#priorityOptions").hide();
+      $("#severityOptions").hide();
+      $("#riskOptions").hide();
+      $("#tagsOptions").hide();
+      $("#buildOptions").hide();
+      $("#releaseOptions").hide();
+      $("#linksOptions").hide();
+      $("#testOptions").show();
+    });
+
+$("#build").click(function(){
+      $("#statusOptions").hide();
+      $("#phaseOptions").hide();
+      $("#priorityOptions").hide();
+      $("#severityOptions").hide();
+      $("#riskOptions").hide();
+      $("#testOptions").hide();
+      $("#tagsOptions").hide();
+      $("#releaseOptions").hide();
+      $("#linksOptions").hide();
+      $("#buildOptions").show();
+    });
+
+$("#release").click(function(){
+      $("#statusOptions").hide();
+      $("#phaseOptions").hide();
+      $("#priorityOptions").hide();
+      $("#severityOptions").hide();
+      $("#riskOptions").hide();
+      $("#testOptions").hide();
+      $("#buildOptions").hide();
+      $("#tagsOptions").hide();
+      $("#linksOptions").hide();
+      $("#releaseOptions").show();
+    });
+
+  $("button").click(function(){
+
+        var value = $(this).html();  
+        //$("#show_selection").append($(this).attr("class"));
+         if(value =="Status") 
+          {
+              $("#statusRes").html(value + ":");
+              $(".statusOption").click(function(){
+                  var subvalue = $(this).html();
+                  $("#statusValue").html(subvalue + " |");
+              });
+          }
+          else if(value =="Phase") 
+          {
+              $("#phaseRes").html(value + ":");
+              $(".phaseOption").click(function(){
+                  var subvalue = $(this).html();
+                  $("#phaseValue").html(subvalue + " |");
+              });
+          }
+          else if(value =="Priority") 
+          {
+              $("#priorityRes").html(value + ":");
+              $(".priorityOption").click(function(){
+                  var subvalue = $(this).html();
+                  $("#priorityValue").html(subvalue + " |");
+              });
+          }
+          else if(value =="Severity") 
+          {
+              $("#severityRes").html(value + ":");
+              $(".severityOption").click(function(){
+                  var subvalue = $(this).html();
+                  $("#severityValue").html(subvalue);
+              });
+          }
+          else if(value =="Risks") 
+          {
+              $("#riskRes").html(value + ":");
+              $(".riskOption").click(function(){
+                  var subvalue = $(this).html();
+                  $("#riskValue").html(subvalue + " |");
+              });
+          }
+          else if(value =="Test") 
+          {
+              $("#testRes").html(value + ":");
+              $(".testOption").click(function(){
+                  var subvalue = $(this).html();
+                  $("#testValue").html(subvalue + " |");
+              });
+          }
+          else if(value =="Build") 
+          {
+              $("#buildRes").html(value + ":");
+              $(".buildOption").click(function(){
+                  var subvalue = $(this).html();
+                  $("#buildValue").html(subvalue + " |");
+              });
+          }
+          else if(value =="Release") 
+          {
+              $("#releaseRes").html(value + ":");
+              $(".releaseOption").click(function(){
+                  var subvalue = $(this).html();
+                  $("#releaseValue").html(subvalue);
+              });
+          }
+  });
+
+
+  });
+  
+</script>
+
+
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+      <div class="hr-header">
+      <div class="commentButtons" align="right">
+            <a href="" title = "Alert" class="btn btn-sm"><span class="glyphicon glyphicon-alert" style="color:#2AA774;"></span> </a>
+            <a href="" title = "Calendar" class="btn btn-sm"><span class="glyphicon glyphicon-calendar" style="color:#2AA774;"></span> </a>
+            <a href="" title = "E-mail" class="btn btn-sm"><span class="glyphicon glyphicon-envelope" style="color:#2AA774;"></span> </a>
+            <a href="" title = "Attach file" class="btn btn-sm"><span class="fa fa-file" style="color:#2AA774;"></span> </a>
+            <a href="" title = "Links" class="btn btn-sm"><span class="glyphicon glyphicon-link" style="color:#2AA774;"></span> </a>
+            <a href="" title = "Tags" class="btn btn-sm" id = "tags"><span class="glyphicon glyphicon-tag" style="color:#2AA774;"></span> </a>
+            <a href="" title = "Share" class="btn btn-sm"><span class="fa fa-share-alt" style="color:#2AA774;"></span> </a>
+            <a href="" title = "User" class="btn btn-sm"><span class="glyphicon glyphicon-user" style="color:#2AA774;"></span> </a>
+            <button class="btn btn-sm" style="background: #DEEAC3;"></a><span title = "Save"><i class="glyphicon glyphicon-floppy-disk" style="color: #2AA774;"></i></span></button>
+            
+        </div>
+            <form>
+              <div class="form-group">
+              
+                <div style="margin-right: 7.5%;">
+                <textarea class="form-control" rows="5" id="comment" placeholder="Enter comments here..."></textarea>
+                </div>
+                <div style="margin-left: 90%; margin-top: -25%" align="right">
+                <button class="btn btn-sm" style="background: #DEEAC3;"></a><span title = "Delete"><i class="glyphicon glyphicon-remove-sign" style="color: #2AA774;"></i></span></button>
+                <button class="btn btn-sm" style="background: #DEEAC3;"></a><span title = "Edit"><i class="glyphicon glyphicon-pencil" style="color: #2AA774;"></i></span></button>
+                <button class="btn btn-sm" style="background: #DEEAC3;"></a><span title = "Color"><i class="glyphicon glyphicon-th" style="color: #2AA774;"></i></span></button>
+                <a href="" title = "Timer" class="btn btn-sm"><span class="glyphicon glyphicon-time" style="color:#2AA774;"></span> </a>
+
+              
+
+              </div>
+            </form>
+        
+        <div class="actionButtons" align="right">
+        <div class="btn-group">
+              <button type="button"  id = "status" class="actionBt btn btn-xs btn-success">Status</button>
+              <button type="button"  id = "phase" class="actionBt btn btn-xs btn-success">Phase</button>
+              <button type="button"  id = "priority" class="actionBt btn btn-xs btn-success">Priority</span></button>
+              <button type="button"  id = "severity" class="actionBt btn btn-xs btn-success">Severity</span></button>
+              <button type="button"  id = "risk" class="actionBt btn btn-xs btn-success">Risks</span></button>
+              <button type="button"  id = "test" class="actionBt btn btn-xs btn-success">Test</span></button>
+              <button type="button"  id = "build" class="actionBt btn btn-xs btn-success">Build</span></button>
+              <button type="button"  id = "release" class="actionBt btn btn-xs btn-success">Release</span></button>
+              <!-- <button type="button" class="btn btn-xs btn-success" id = "tags">Tags</button>
+              <button type="button" class="btn btn-xs btn-success" id = "links">Links</button> -->
+          </div></div>
+
+          <div class="collapsableActionButtons" align="right">
+              <div id="statusOptions" style="display: none;">
+               <div class="btn-group">
+               <button type="button" class="btn btn-xs btn-subgroups statusOption" id = "new">New</button>
+                  <button type="button" class="btn btn-xs btn-subgroups statusOption" id = "accepted">Accepted</button>
+                  <button type="button" id = "review" class="btn btn-xs btn-subgroups statusOption">Review</button>
+                  <button type="button" id = "open" class="btn btn-xs btn-subgroups statusOption">Open</span></button>
+                  <button type="button" id = "assigned" class="btn btn-xs btn-subgroups statusOption">Assigned</span></button>
+                  <button type="button" id = "more info" class="btn btn-xs btn-subgroups statusOption">More Info</span></button>
+                  <button type="button" id = "closed" class="btn btn-xs btn-subgroups statusOption">Closed</span></button>
+                  <button type="button" id = "rejected" class="btn btn-xs btn-subgroups statusOption">Rejected</span></button>
+                  <button type="button" style="padding: 3px;" id = "new" class="btn btn-xs btn-subgroups fa fa-plus"></span></button>
+                </div>
+                </div>
+
+              <div id="roleOptions" style="display: none;">
+                  <div class="btn-group">
+                  <button type="button" class="btn btn-xs btn-subgroups roleOption" id = "responsible">Responsible</button>
+                  <button type="button" id = "accountable" class="btn btn-xs btn-subgroups roleOption">Accountable</button>
+                  <button type="button" id = "consultative" class="btn btn-xs btn-subgroups roleOption">Consultative</span></button>
+                  <button type="button" id = "informative" class="btn btn-xs btn-subgroups roleOption">Informative</span></button>
+                  <button type="button" style="padding: 3px;" id = "new" class="btn btn-xs btn-subgroups fa fa-plus"></span></button>
+                  </div>
+              </div>
+               <div id="phaseOptions" style="display: none;">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-xs btn-subgroups phaseOption" id = "planning">Plan</button>
+                  <button type="button" id = "analysis" class="btn btn-xs btn-subgroups phaseOption">Analysis</button>
+                  <button type="button" id = "design" class="btn btn-xs btn-subgroups phaseOption">Design</span></button>
+                  <button type="button" id = "dev" class="btn btn-xs btn-subgroups phaseOption">Dev</span></button>
+                  <button type="button" id = "build" class="btn btn-xs btn-subgroups phaseOption">Build</span></button>
+                  <button type="button" id = "test" class="btn btn-xs btn-subgroups phaseOption">Test</span></button>
+                  <button type="button" id = "config" class="btn btn-xs btn-subgroups phaseOption">Config</span></button>
+                  <button type="button" id = "deploy" class="btn btn-xs btn-subgroups phaseOption">Deploy</span></button>
+                  <button type="button" id = "live" class="btn btn-xs btn-subgroups phaseOption">Go live</span></button>
+                  <button type="button" style="padding: 3px;" id = "new" class="btn btn-xs btn-subgroups fa fa-plus"></span></button>
+                </div>
+
+          
+               </div>
+               <div id="tagsOptions" style="display: none;">
+               <div class="btn-group">
+               <button type="button" class="btn btn-xs btn-subgroups tagsOption" id = "Tag1">Tag1</button>
+               <button type="button" class="btn btn-xs btn-subgroups tagsOption" id = "Tag2">Tag2</button>
+               <button type="button" class="btn btn-xs btn-subgroups tagsOption" id = "Tag3">Tag3</button>
+               <button type="button" class="btn btn-xs btn-subgroups tagsOption" id = "Tag4">Tag4</button>
+               <button type="button" style="padding: 3px;" id = "new" class="btn btn-xs btn-subgroups fa fa-plus"></span></button>
+                </div>
+                </div>
+               <div id="priorityOptions" style="display: none;">
+               <div class="btn-group">
+               <button type="button" class="btn btn-xs btn-subgroups priorityOption" id = "none">None</button>
+                  <button type="button" class="btn btn-xs btn-subgroups priorityOption" id = "low">Low</button>
+                  <button type="button" id = "medium" class="btn btn-xs btn-subgroups priorityOption">Medium</button>
+                  <button type="button" id = "high" class="btn btn-xs btn-subgroups priorityOption">High</span></button>
+                  <button type="button" id = "significant" class="btn btn-xs btn-subgroups priorityOption">Significant</span></button>
+                  <button type="button" id = "critical" class="btn btn-xs btn-subgroups priorityOption">Critical</span></button>
+                  <button type="button" style="padding: 3px;" id = "new" class="btn btn-xs btn-subgroups fa fa-plus"></span></button>
+                </div>
+               </div>
+               <div id="severityOptions" style="display: none;">
+               <div class="btn-group">
+               <button type="button" class="btn btn-xs btn-subgroups severityOption" id = "none">None</button>
+                  <button type="button" class="btn btn-xs btn-subgroups severityOption" id = "minor">Minor</button>
+                  <button type="button" id = "moderate" class="btn btn-xs btn-subgroups severityOption">Moderate</button>
+                  <button type="button" id = "major" class="btn btn-xs btn-subgroups severityOption">Major</span></button>
+                  <button type="button" id = "high" class="btn btn-xs btn-subgroups severityOption">High</span></button>
+                  <button type="button" id = "catastrophic" class="btn btn-xs btn-subgroups severityOption">Catastrophic</span></button>
+                  <button type="button" style="padding: 3px;" id = "new" class="btn btn-xs btn-subgroups fa fa-plus"></span></button>
+
+                </div>
+
+               </div>
+               <div id="riskOptions" style="display: none;">
+               <div class="btn-group">
+
+                  <button type="button" class="btn btn-xs btn-subgroups riskOption" id = "lag">Lag</button>
+                  <button type="button" id = "aggressive" class="btn btn-xs btn-subgroups riskOption">Aggressive</button>
+                  <button type="button" id = "conflict" class="btn btn-xs btn-subgroups riskOption">Conflict</span></button>
+                  <button type="button" id = "misconfig" class="btn btn-xs btn-subgroups riskOption">Misconfig</span></button>
+                  <button type="button" id = "missing" class="btn btn-xs btn-subgroups riskOption">Missing</span></button>
+                  <button type="button" style="padding: 3px;" id = "new" class="btn btn-xs btn-subgroups fa fa-plus"></span></button>
+
+                </div>
+               </div>
+               <div id="testOptions" style="display: none;">
+               <div class="btn-group">
+                  <button type="button" class="btn btn-xs btn-subgroups testOption" id = "code">Code Link</button>
+                  <button type="button" id = "run" class="btn btn-xs btn-subgroups testOption">Run</button>
+                  <button type="button" id = "resume" class="btn btn-xs btn-subgroups testOption">Resume</span></button>
+                  <button type="button" id = "stop" class="btn btn-xs btn-subgroups testOption">Stop</span></button>
+                  <button type="button" id = "pass" class="btn btn-xs btn-subgroups testOption">Pass</span></button>
+                  <button type="button" id = "delete" class="btn btn-xs btn-subgroups testOption">Delete</span></button>
+                  <button type="button" id = "patch" class="btn btn-xs btn-subgroups testOption">Patch</span></button>
+                  <button type="button" class="btn btn-xs btn-subgroups testOption" id = "release">Release</button>
+                  <button type="button" id = "branch" class="btn btn-xs btn-subgroups testOption">Branch</button>
+                  <button type="button" id = "trunk" class="btn btn-xs btn-subgroups testOption">Trunk</span></button>
+                </div>
+               </div>
+               <div id="buildOptions" style="display: none;">
+               <div class="btn-group">
+                  <button type="button" class="btn btn-xs btn-subgroups buildOption" id = "code">Code Link</button>
+                  <button type="button" id = "run" class="btn btn-xs btn-subgroups buildOption">Run</button>
+                  <button type="button" id = "resume" class="btn btn-xs btn-subgroups buildOption">Resume</span></button>
+                  <button type="button" id = "stop" class="btn btn-xs btn-subgroups buildOption">Stop</span></button>
+                  <button type="button" id = "pass" class="btn btn-xs btn-subgroups buildOption">Pass</span></button>
+                  <button type="button" id = "delete" class="btn btn-xs btn-subgroups buildOption">Delete</span></button>
+                  <button type="button" id = "patch" class="btn btn-xs btn-subgroups buildOption">Patch</span></button>
+                  <button type="button" class="btn btn-xs btn-subgroups buildOption" id = "release">Release</button>
+                  <button type="button" id = "branch" class="btn btn-xs btn-subgroups buildOption">Branch</button>
+                  <button type="button" id = "trunk" class="btn btn-xs btn-subgroups buildOption">Trunk</span></button>
+                </div>
+               </div>
+               <div id="releaseOptions" style="display: none;">
+               <div class="btn-group">
+                  <button type="button" class="btn btn-xs btn-subgroups releaseOption" id = "code">Code Link</button>
+                  <button type="button" id = "run" class="btn btn-xs btn-subgroups releaseOption">Run</button>
+                  <button type="button" id = "resume" class="btn btn-xs btn-subgroups releaseOption">Resume</span></button>
+                  <button type="button" id = "stop" class="btn btn-xs btn-subgroups releaseOption">Stop</span></button>
+                  <button type="button" id = "pass" class="btn btn-xs btn-subgroups releaseOption">Pass</span></button>
+                  <button type="button" id = "delete" class="btn btn-xs btn-subgroups releaseOption">Delete</span></button>
+                  <button type="button" id = "patch" class="btn btn-xs btn-subgroups releaseOption">Patch</span></button>
+                  <button type="button" class="btn btn-xs btn-subgroups releaseOption" id = "release">Release</button>
+                  <button type="button" id = "branch" class="btn btn-xs btn-subgroups releaseOption">Branch</button>
+                  <button type="button" id = "trunk" class="btn btn-xs btn-subgroups releaseOption">Trunk</span></button>
+                </div>
+               </div>
+              </div> 
+          <div id="show_selection" class="show_selection" >
+          <span id="statusRes" class="selection_font"></span><span class = "sub_font" id="statusValue"></span>
+          <span id="phaseRes" class="selection_font"></span><span class = "sub_font" id="phaseValue"></span>
+          <span id="priorityRes" class="selection_font"></span><span class = "sub_font" id="priorityValue"></span>
+          <span id="severityRes" class="selection_font"></span><span class = "sub_font" id="severityValue"></span> <br />
+          <span id="riskRes" class="selection_font"></span><span class = "sub_font" id="riskValue"></span>
+          <span id="testRes" class="selection_font"></span><span class = "sub_font" id="testValue"></span>
+          <span id="buildRes" class="selection_font"></span><span class = "sub_font" id="buildValue"></span>
+          <span id="releaseRes" class="selection_font"></span><span class = "sub_font" id="releaseValue"></span>
+              
+          </div>  
+
+      </div>
+    </div>
+  </div>
+
